@@ -1,7 +1,9 @@
-#!/bin/sh
+#!/bin/bash
 #
 # Updates all git repositories in a directory.
 # Optional `-s` argument for safe mode (requires input for each update).
+
+WORKING_DIR=$(pwd)
 
 while getopts ":s" opt; do
     case $opt in
@@ -12,13 +14,14 @@ done
 
 for dir in $(ls -d */); do
     if [[ $SAFE_MODE ]]; then
-        read -p "Update $dir?" -n 1 -r
+        read -p "Update $dir? [yn] " -n 1 -r
         echo
     fi
     if [[ $REPLY =~ ^[Yy]$ || -z "$SAFE_MODE" ]]; then
         cd $dir
-        git pu
-        cd ../
+        echo "---------- UPDATING $dir ----------"
+        git pull --prune
+        cd "$WORKING_DIR"
     fi
 done
 

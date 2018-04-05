@@ -7,11 +7,13 @@ tap 'homebrew/bundle'
 # Dependency for sbt and scala
 cask 'java8'
 
+brew 'clojure'
 brew 'coreutils'
 brew 'git'
 brew 'git-completion'
 brew 'httpie'
 brew 'jq'
+brew 'leiningen'
 brew 'libyaml'
 brew 'node'
 brew 'openssl'

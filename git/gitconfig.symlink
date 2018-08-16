@@ -8,13 +8,15 @@
     br = branch
     ci = commit
     pu = pull -p
+    wdid = log --author "brendonjwong" --all --since "yesterday"
 [color]
     diff = auto
     status = auto
     branch = auto
     ui = true
 [core]
-    editor = /usr/bin/vim
+    editor = /usr/local/bin/nvim
+    excludesfile = /Users/brendon/.gitignore
 [mergetool]
     keepBackup = false
 [diff]

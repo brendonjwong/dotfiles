@@ -1,13 +1,3 @@
-" An example for a vimrc file.
-"
-" Maintainer:	Bram Moolenaar <Bram@vim.org>
-" Last change:	2015 Mar 24
-
-" When started as "evim", evim.vim will already have done these settings.
-if v:progname =~? "evim"
-  finish
-endif
-
 " Use Vim settings, rather than Vi settings (much better!).
 " This must be first, because it changes other options as a side effect.
 set nocompatible
@@ -16,8 +6,8 @@ set nocompatible
 set backspace=indent,eol,start
 
 set history=50		" keep 50 lines of command line history
-set ruler		    " show the cursor position all the time
-set showcmd		    " display incomplete commands
+set ruler		" show the cursor position all the time
+set showcmd		" display incomplete commands
 set incsearch		" do incremental searching
 
 " Don't use Ex mode, use Q for formatting
@@ -65,7 +55,6 @@ else
   set autoindent		" always set autoindenting on
 endif " has("autocmd")
 
-
 if has('langmap') && exists('+langnoremap')
   " Prevent that the langmap option applies to characters that result from a
   " mapping.  If unset (default), this may break plugins (but it's backward
@@ -79,5 +68,9 @@ set expandtab
 set nobackup
 set noundofile
 set number
-inoremap {<cr> {<cr>}<c-o><s-o>
 
+"Change vim windows
+nmap <silent> <A-j> :wincmd j<CR>
+nmap <silent> <A-l> :wincmd k<CR>
+nmap <silent> <A-h> :wincmd h<CR>
+nmap <silent> <A-l> :wincmd l<CR>

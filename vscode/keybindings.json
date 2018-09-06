@@ -90,6 +90,26 @@
         "key": "alt+cmd+down",
         "command": "-editor.action.insertCursorBelow",
         "when": "editorTextFocus"
-    }
+    },
+    {
+        "key": "cmd+d",
+        "command": "workbench.action.splitEditor"
+    },
+    {
+        "key": "cmd+\\",
+        "command": "-workbench.action.splitEditor"
+    },
+    {
+        "key": "shift+cmd+d",
+        "command": "workbench.action.splitEditorDown"
+    },
+    {
+        "key": "shift+cmd+d",
+        "command": "-workbench.view.debug"
+    },
+    {
+        "key": "cmd+d",
+        "command": "-editor.action.addSelectionToNextFindMatch",
+        "when": "editorFocus"
+    },
 ]
-

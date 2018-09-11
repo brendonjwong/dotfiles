@@ -70,7 +70,7 @@ set noundofile
 set number
 
 "Change vim windows
-nmap <silent> <A-j> :wincmd j<CR>
-nmap <silent> <A-k> :wincmd k<CR>
-nmap <silent> <A-h> :wincmd h<CR>
-nmap <silent> <A-l> :wincmd l<CR>
+nmap <silent> <C-j> :wincmd j<CR>
+nmap <silent> <C-k> :wincmd k<CR>
+nmap <silent> <C-h> :wincmd h<CR>
+nmap <silent> <C-l> :wincmd l<CR>

@@ -1,1 +1,4 @@
-git/gitconfig-local.symlink
+*-local.symlink
+
+# Vim
+.netrwhist

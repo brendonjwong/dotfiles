@@ -18,8 +18,7 @@ There's a few special files in the hierarchy.
   available everywhere.
 - **Brewfile**: This is a list of applications for 
   [Homebrew Cask](https://caskroom.github.io) to install: things like Chrome
-  and 1Password and Adium and stuff. Might want to edit this file before
-  running any initial setup.
+  and Java and Clojure and stuff.
 - **topic/\*.zsh**: Any files ending in `.zsh` get loaded into your
   environment.
 - **topic/path.zsh**: Any file named `path.zsh` is loaded first and is
@@ -39,16 +38,24 @@ There's a few special files in the hierarchy.
 Run this:
 
 ```sh
-git clone https://github.com/bjwongw/dotfiles.git ~/.dotfiles
-cd ~/.dotfiles
+# Download the dotfiles repo
+curl -LOk https://github.com/brendonjwong/dotfiles/archive/master.zip
+unzip master.zip
+mv dotfiles-master dotfiles
+cd dotfiles
+
+# Run the installation
 script/bootstrap
+
+# Connect the local directory to remote repo (now that git is installed)
+git init
+git remote add origin git@github.com:brendonjwong/dotfiles.git
+git clean -fd
+git pull origin master
+git branch --set-upstream-to=origin/master master
 ```
 
-This will symlink the appropriate files in `.dotfiles` to your home directory.
-Everything is configured and tweaked within `~/.dotfiles`.
-
-The main file you'll want to change right off the bat is `zsh/zshrc.symlink`,
-which sets up a few paths that'll be different on your particular machine.
+This will symlink the appropriate files in `dotfiles` to your home directory.
 
 `dot` is a simple script that installs some dependencies, sets sane macOS
 defaults, and so on. Tweak this script, and occasionally run `dot` from

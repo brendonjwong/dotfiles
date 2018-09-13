@@ -2,7 +2,7 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/Users/brendon/.oh-my-zsh"
+export ZSH="/Users/$USER/.oh-my-zsh"
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
@@ -11,14 +11,6 @@ ZSH_THEME="theunraveler"
 
 # Use case-sensitive completion.
 CASE_SENSITIVE="true"
-
-# Uncomment the following line if you want to disable marking untracked files
-# under VCS as dirty. This makes repository status check for large repositories
-# much, much faster.
-# DISABLE_UNTRACKED_FILES_DIRTY="true"
-
-# Would you like to use another custom folder than $ZSH/custom?
-# ZSH_CUSTOM=/path/to/new-custom-folder
 
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 plugins=(
@@ -39,48 +31,26 @@ export CLICOLOR=1
 # Set colors to match iTerm2 Terminal Colors
 export TERM=xterm-256color
 
-# Set personal aliases, overriding those provided by oh-my-zsh libs,
-# plugins, and themes. Aliases can be placed here, though oh-my-zsh
-# users are encouraged to define aliases within the ZSH_CUSTOM folder.
-# For a full list of active aliases, run `alias`.
-#
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
-
-alias nv='nvim'
-alias l='ls'
-alias ll='ls -l'
-alias la='ls -a'
-alias gb='git branch'
-alias gs='git status'
-alias gc='git checkout'
-alias gcm='git checkout master'
-alias gcp='git checkout plugin-release'
-alias gd='git diff'
-alias gf='git fetch'
-alias gfs='git fetch && git status'
-alias cdr='cd ~/repos/'
-alias cda='cd ~/repos/app/'
-alias cdadmin='cd ~/repos/app/service/admin/admin-repl/'
-
-
 export VISUAL=nvim
 export EDITOR="$VISUAL"
 
 export HISTCONTROL=ignoredups
 export HIST_FIND_NO_DUPS=true
 
-# Vault configs
-export VAULT_ADDR='https://vault.amperity.top:8200'
-export VAULT_TOKEN=$(cat ~/.vault-token)
-
-export DEFAULT_USER='brendon'
-
 # History settings
 setopt HIST_IGNORE_DUPS       # Don't record an entry that was just recorded again.
 setopt HIST_IGNORE_ALL_DUPS   # Delete old recorded entry if new entry is a duplicate.
 setopt HIST_FIND_NO_DUPS      # Do not display a line previously found.
 setopt HIST_SAVE_NO_DUPS      # Don't write duplicate entries in the history file.
+
+# Pull in local configurations
+if [ -f ~/.zshrc-local ]; then
+    source ~/.zshrc-local
+fi
+
+# Add zsh aliases
+if [ -f ~/.zshrc-aliases ]; then
+    source ~/.zshrc-aliases
+fi
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

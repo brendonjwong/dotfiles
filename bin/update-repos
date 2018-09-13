@@ -3,7 +3,7 @@
 # Updates all git repositories in a directory.
 # Optional `-s` argument for safe mode (requires input for each update).
 
-WORKING_DIR=$(pwd)
+WORKING_DIR=$(dirname "$0")
 
 while getopts ":s" opt; do
     case $opt in

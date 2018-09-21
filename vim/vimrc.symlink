@@ -69,6 +69,8 @@ set nobackup
 set noundofile
 set number
 
+let mapleader=","
+
 "Change vim windows
 nmap <silent> <C-j> :wincmd j<CR>
 nmap <silent> <C-k> :wincmd k<CR>

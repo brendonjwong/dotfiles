@@ -7,6 +7,7 @@
     co = checkout
     br = branch
     ci = commit
+    l = log
     pu = pull -p
     wdid = log --author "brendonjwong" --all --since "yesterday"
 [color]

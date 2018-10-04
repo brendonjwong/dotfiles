@@ -64,14 +64,15 @@ endif
 
 set tabstop=4
 set shiftwidth=4
-set expandtab
+set expandtab " use spaces for tabs
+set list      " show whitespace characters
 set nobackup
 set noundofile
-set number
+set number    " show line numbers on sidebar
 
 let mapleader=","
 
-"Change vim windows
+" Change vim windows
 nmap <silent> <C-j> :wincmd j<CR>
 nmap <silent> <C-k> :wincmd k<CR>
 nmap <silent> <C-h> :wincmd h<CR>

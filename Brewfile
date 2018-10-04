@@ -1,6 +1,7 @@
 cask_args appdir: '/Applications'
 
 tap 'caskroom/cask'
+tap 'caskroom/fonts'
 tap 'caskroom/versions'
 tap 'homebrew/bundle'
 
@@ -29,6 +30,7 @@ brew 'zsh'
 
 cask 'firefox'
 cask 'flycut'
+cask 'font-source-code-pro'
 cask 'intellij-idea'
 cask 'iterm2'
 cask 'google-chrome'

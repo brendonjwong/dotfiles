@@ -1,6 +1,9 @@
 # Reload tmux config
 bind r source-file ~/.tmux.conf
 
+# set terminal color
+set-option -g default-terminal "screen-256color"
+
 # big scrollback
 set -g history-limit 10000
 

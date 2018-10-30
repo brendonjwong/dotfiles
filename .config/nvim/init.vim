@@ -12,6 +12,9 @@ Plug '/usr/local/opt/fzf'
 Plug 'junegunn/fzf.vim'
 call plug#end()
 
+" Paredit settings
+let g:paredit_matchlines=500
+
 " Activation based on file type
 augroup rainbow_lisp
   autocmd!

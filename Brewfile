@@ -3,6 +3,7 @@ cask_args appdir: '/Applications'
 tap 'caskroom/cask'
 tap 'caskroom/fonts'
 tap 'caskroom/versions'
+tap 'd12frosted/emacs-plus'
 tap 'homebrew/bundle'
 
 # Dependency for sbt and scala
@@ -28,6 +29,7 @@ brew 'vault'
 brew 'wget'
 brew 'zsh'
 
+cask 'emacs-plus'
 cask 'firefox'
 cask 'flycut'
 cask 'font-source-code-pro'

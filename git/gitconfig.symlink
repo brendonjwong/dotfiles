@@ -10,6 +10,7 @@
     d = diff
     ds = diff --staged
     l = log
+    rb = rebase
     pu = pull -p
     wdid = log --author "brendonjwong" --all --since "yesterday"
 [color]

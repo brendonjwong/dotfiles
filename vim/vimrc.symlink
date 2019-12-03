@@ -2,8 +2,7 @@
 " This must be first, because it changes other options as a side effect.
 set nocompatible
 
-" allow backspacing over everything in insert mode
-set backspace=indent,eol,start
+" allow backspacing over everything in insert mode set backspace=indent,eol,start
 
 set history=50		" keep 50 lines of command line history
 set ruler		" show the cursor position all the time
@@ -69,6 +68,7 @@ set list      " show whitespace characters
 set nobackup
 set noundofile
 set number    " show line numbers on sidebar
+set ignorecase
 
 let mapleader=","
 
@@ -80,3 +80,7 @@ nmap <silent> <C-l> :wincmd l<CR>
 
 " Clojure settings
 nmap <Leader>R :Require<CR>
+nmap <Leader>E :%Eval<CR>
+
+" Color settings
+highlight Pmenu ctermbg=white

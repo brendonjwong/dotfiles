@@ -70,6 +70,8 @@ set noundofile
 set number    " show line numbers on sidebar
 set ignorecase
 
+" ---------- SHORTCUTS ----------
+
 let mapleader=","
 
 " Change vim windows
@@ -78,9 +80,36 @@ nmap <silent> <C-k> :wincmd k<CR>
 nmap <silent> <C-h> :wincmd h<CR>
 nmap <silent> <C-l> :wincmd l<CR>
 
+" FZF-VIM settings
+nmap <leader>F :FZF<CR>
+nmap <leader>f :Rg<CR>
+
 " Clojure settings
-nmap <Leader>R :Require<CR>
-nmap <Leader>E :%Eval<CR>
+nmap <leader>R :Require<CR>
+nmap <leader>E :%Eval<CR>
+
+" Use tab to jump to matching enclosure pairs
+nnoremap <tab> %
+vnoremap <tab> %
+
+" Clear search highlights
+nnoremap <leader><space> :noh<cr>
+
+" ---------- CLOJURE ----------
+
+function! Cljstyle()
+    let cwd = getcwd()
+    let winsave = winsaveview()
+    execute "cd" . expand('%:p:h')
+
+    :%!cljstyle pipe
+
+    execute "cd" . cwd
+    call winrestview(winsave)
+
+endfunction
+
+command! Cljstyle call Cljstyle()
 
 " Color settings
 highlight Pmenu ctermbg=white

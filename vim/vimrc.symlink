@@ -4,10 +4,10 @@ set nocompatible
 
 " allow backspacing over everything in insert mode set backspace=indent,eol,start
 
-set history=50		" keep 50 lines of command line history
-set ruler		" show the cursor position all the time
-set showcmd		" display incomplete commands
-set incsearch		" do incremental searching
+set history=50 " keep 50 lines of command line history
+set ruler      " show the cursor position all the time
+set showcmd    " display incomplete commands
+set incsearch  " do incremental searching
 
 " Don't use Ex mode, use Q for formatting
 map Q gq
@@ -51,7 +51,7 @@ if has("autocmd")
   augroup END
 
 else
-  set autoindent		" always set autoindenting on
+  set autoindent " always set autoindenting on
 endif " has("autocmd")
 
 if has('langmap') && exists('+langnoremap')
@@ -69,6 +69,9 @@ set nobackup
 set noundofile
 set number    " show line numbers on sidebar
 set ignorecase
+
+" Color settings
+highlight Pmenu ctermbg=white
 
 " ---------- SHORTCUTS ----------
 
@@ -95,6 +98,9 @@ vnoremap <tab> %
 " Clear search highlights
 nnoremap <leader><space> :noh<cr>
 
+" Open netrw
+nnoremap <leader>e :Explore<cr>
+
 " ---------- CLOJURE ----------
 
 function! Cljstyle()
@@ -106,10 +112,15 @@ function! Cljstyle()
 
     execute "cd" . cwd
     call winrestview(winsave)
-
 endfunction
 
 command! Cljstyle call Cljstyle()
 
-" Color settings
-highlight Pmenu ctermbg=white
+" ---------- PYTHON ----------
+
+autocmd BufReadPost *.py
+  \ set tabstop=4
+  \ set softtabstop=4
+  \ set shiftwidth=4
+  \ set expandtab
+  \ set autoindent

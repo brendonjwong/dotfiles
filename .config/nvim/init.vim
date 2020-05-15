@@ -4,6 +4,7 @@ source ~/.vimrc
 call plug#begin('~/.local/share/nvim/plugged')
 Plug 'ervandew/supertab'
 Plug 'junegunn/rainbow_parentheses.vim'
+Plug 'junegunn/vim-easy-align'
 Plug 'tpope/vim-dispatch'
 Plug 'tpope/vim-fireplace'
 Plug 'tpope/vim-fugitive'
@@ -39,3 +40,9 @@ function! ClojureContext()
     return "\<c-x>\<c-o>"
   endif
 endfunction
+
+" Start interactive EasyAlign in visual mode (e.g. vipga)
+xmap ga <Plug>(EasyAlign)
+
+" Start interactive EasyAlign for a motion/text object (e.g. gaip)
+nmap ga <Plug>(EasyAlign)

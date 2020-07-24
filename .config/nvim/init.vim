@@ -6,13 +6,21 @@ Plug 'ervandew/supertab'
 Plug 'junegunn/rainbow_parentheses.vim'
 Plug 'junegunn/vim-easy-align'
 Plug 'tpope/vim-dispatch'
-Plug 'tpope/vim-fireplace'
-Plug 'tpope/vim-fugitive'
-Plug 'tpope/vim-rhubarb'
+" Plug 'tpope/vim-fireplace', {'for': 'clojure'}
 Plug 'tpope/vim-surround'
 Plug 'vim-scripts/paredit.vim'
+
+" Git/GitHub
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-rhubarb'
+
+" FZF
 Plug '/usr/local/opt/fzf'
 Plug 'junegunn/fzf.vim'
+
+" Vim-iced and dependency
+Plug 'guns/vim-sexp', {'for': 'clojure'}
+Plug 'liquidz/vim-iced', {'for': 'clojure'}
 call plug#end()
 
 " Paredit settings
@@ -23,10 +31,6 @@ augroup rainbow_lisp
   autocmd!
   autocmd FileType lisp,clojure,scheme RainbowParentheses
 augroup END
-
-" Change to the directory the file in your current buffer is in
-" au BufEnter * if &buftype != "nofile" && isdirectory(expand("%:p:h"))
-"     \ | lcd %:p:h | endif
 
 " SuperTab completion for Clojure
 let g:SuperTabDefaultCompletionType="context"
@@ -46,3 +50,18 @@ xmap ga <Plug>(EasyAlign)
 
 " Start interactive EasyAlign for a motion/text object (e.g. gaip)
 nmap ga <Plug>(EasyAlign)
+
+" Vim-Iced Settings
+" Enable vim-iced's default key mapping
+let g:iced_enable_default_key_mappings = v:true
+let g:iced_formatter = "cljstyle"
+
+" ---------- SHORTCUTS ----------
+
+" FZF-VIM settings
+nmap <leader>F :FZF<CR>
+nmap <leader>f :Rg<CR>
+
+" Fireplace settings
+" nmap <leader>R :Require<CR>
+" nmap <leader>E :%Eval<CR>

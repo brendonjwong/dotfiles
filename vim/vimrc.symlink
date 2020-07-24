@@ -83,14 +83,6 @@ nmap <silent> <C-k> :wincmd k<CR>
 nmap <silent> <C-h> :wincmd h<CR>
 nmap <silent> <C-l> :wincmd l<CR>
 
-" FZF-VIM settings
-nmap <leader>F :FZF<CR>
-nmap <leader>f :Rg<CR>
-
-" Clojure settings
-nmap <leader>R :Require<CR>
-nmap <leader>E :%Eval<CR>
-
 " Use tab to jump to matching enclosure pairs
 nnoremap <tab> %
 vnoremap <tab> %
@@ -115,6 +107,22 @@ function! Cljstyle()
 endfunction
 
 command! Cljstyle call Cljstyle()
+
+" Connects to nREPL using vim-iced, with a one- or two-arg form:
+" - (port)
+" - (host, port)
+function! CljConnect(...)
+    call iced#repl#execute('disconnect')
+    if a:0 == 1
+        let g:iced#nrepl#host = "127.0.0.1"
+        call iced#repl#connect('nrepl', a:1)
+    else
+        let g:iced#nrepl#host = a:1
+        call iced#repl#connect('nrepl', a:2)
+    endif
+endfunction
+
+command! -nargs=+ CljConnect call CljConnect(<f-args>)
 
 " ---------- PYTHON ----------
 

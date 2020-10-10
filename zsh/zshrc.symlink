@@ -52,7 +52,11 @@ fi
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
+# Initialize pyenv
+if command -v pyenv 1>/dev/null 2>&1; then
+    eval "$(pyenv init -)"
+    eval "$(pyenv virtualenv-init -)"
+fi
+
 # Put vim-iced on the PATH
 export PATH=$PATH:/Users/$USER/.local/share/nvim/plugged/vim-iced/bin
-
-source /Users/brendon/Library/Preferences/org.dystroy.broot/launcher/bash/br

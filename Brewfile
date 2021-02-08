@@ -34,6 +34,7 @@ brew 'tldr'
 brew 'tmux'
 brew 'vault'
 brew 'wget'
+brew 'xsv'
 brew 'zsh'
 
 cask 'firefox'

@@ -70,7 +70,5 @@ fi
 # Put vim-iced on the PATH
 export PATH=$PATH:/Users/$USER/.local/share/nvim/plugged/vim-iced/bin
 
-source /Users/brendon/Library/Preferences/org.dystroy.broot/launcher/bash/br
-
 autoload -U +X bashcompinit && bashcompinit
 complete -o nospace -C /usr/local/bin/terraform terraform

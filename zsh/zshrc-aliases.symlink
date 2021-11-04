@@ -12,7 +12,7 @@ alias gds='git diff --staged'
 alias gf='git fetch'
 alias gfs='git fetch && git status'
 alias grm='git rebase master'
-alias dc='docker-compose'
+alias dc='docker compose'
 
 # Changing directories
 alias cdd='cd ~/Downloads/'

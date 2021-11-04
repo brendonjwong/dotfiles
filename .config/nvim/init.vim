@@ -6,7 +6,6 @@ Plug 'ervandew/supertab'
 Plug 'junegunn/rainbow_parentheses.vim'
 Plug 'junegunn/vim-easy-align'
 Plug 'tpope/vim-dispatch'
-" Plug 'tpope/vim-fireplace', {'for': 'clojure'}
 Plug 'tpope/vim-surround'
 Plug 'vim-scripts/paredit.vim'
 
@@ -61,7 +60,3 @@ let g:iced_formatter = "cljstyle"
 " FZF-VIM settings
 nmap <leader>F :FZF<CR>
 nmap <leader>f :Rg<CR>
-
-" Fireplace settings
-" nmap <leader>R :Require<CR>
-" nmap <leader>E :%Eval<CR>

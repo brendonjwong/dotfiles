@@ -1,6 +1,5 @@
 {
     "editor.fontSize": 11,
-    "window.zoomLevel": -0.8,
     "editor.multiCursorModifier": "alt",
     "editor.snippetSuggestions": "top",
     "editor.formatOnPaste": true,
@@ -9,4 +8,9 @@
     "clojureVSCode.autoStartNRepl": false,
     "editor.renderWhitespace": "none",
     "diffEditor.ignoreTrimWhitespace": false,
+    "workbench.editorAssociations": {
+        "*.ipynb": "jupyter.notebook.ipynb"
+    },
+    "explorer.confirmDelete": false,
+    "workbench.startupEditor": "newUntitledFile",
 }

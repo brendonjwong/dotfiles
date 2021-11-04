@@ -76,6 +76,7 @@ highlight Pmenu ctermbg=white
 " ---------- SHORTCUTS ----------
 
 let mapleader=","
+let maplocalleader=","
 
 " Change vim windows
 nmap <silent> <C-j> :wincmd j<CR>

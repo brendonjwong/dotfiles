@@ -65,3 +65,5 @@ this script in `bin/`.
 ## Credit
 
 I forked [Zach Holman](https://github.com/holman/dotfiles)'s dotfiles. Thank you for providing the basis for my own customization/configuration.
+
+test

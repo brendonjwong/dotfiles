@@ -1,4 +1,5 @@
 *-local.symlink
+Brewfile.lock.json
 
 # Vim
 .netrwhist

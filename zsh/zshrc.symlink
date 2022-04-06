@@ -71,6 +71,7 @@ fi
 export PATH=$PATH:/Users/$USER/.local/share/nvim/plugged/vim-iced/bin
 
 autoload -U +X bashcompinit && bashcompinit
+autoload -U compinit && compinit
 complete -o nospace -C /usr/local/bin/terraform terraform
 
 # Put the correct version of java on the PATH

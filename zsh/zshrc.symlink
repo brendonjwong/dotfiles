@@ -1,5 +1,6 @@
-# If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
+# ------------------------------------------------------------------------------
+# zsh/oh-my-zsh configuration
+# ------------------------------------------------------------------------------
 
 # Path to your oh-my-zsh installation.
 export ZSH="/Users/$USER/.oh-my-zsh"
@@ -7,7 +8,9 @@ export ZSH="/Users/$USER/.oh-my-zsh"
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="theunraveler"
+# ZSH_THEME="theunraveler"
+# Disables ZSH theme in favor of Pure (below)
+ZSH_THEME=""
 
 # Use case-sensitive completion.
 CASE_SENSITIVE="true"
@@ -20,14 +23,21 @@ plugins=(
 
 source $ZSH/oh-my-zsh.sh
 
+# ------------------------------------------------------------------------------
 # User configuration
+# ------------------------------------------------------------------------------
 
 # Fix help
 unalias run-help
 autoload run-help
 
-# ssh
+# SSH
 export SSH_KEY_PATH="~/.ssh/rsa_id"
+
+# Pure theme
+fpath+=("$(brew --prefix)/share/zsh/site-functions")
+autoload -U promptinit && promptinit
+prompt pure
 
 # Set CLICOLOR if you want Ansi Colors in iTerm2
 export CLICOLOR=1

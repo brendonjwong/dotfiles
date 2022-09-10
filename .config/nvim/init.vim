@@ -17,8 +17,10 @@ Plug 'tpope/vim-rhubarb'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 
-" Vim-iced and dependencies
+" Clojure
 Plug 'guns/vim-sexp', {'for': 'clojure'}
+
+" Vim-iced and dependencies
 Plug 'liquidz/vim-iced', {'for': 'clojure'}
 Plug 'liquidz/vim-iced-coc-source', {'for': 'clojure'}
 call plug#end()
@@ -39,6 +41,7 @@ nmap ga <Plug>(EasyAlign)
 " Enable vim-iced's default key mapping
 let g:iced_enable_default_key_mappings = v:true
 let g:iced_formatter = "cljstyle"
+let g:iced_enable_clj_kondo_analysis = v:true
 
 " vim-sexp Settings
 let g:sexp_insert_after_wrap = v:false
@@ -82,3 +85,4 @@ inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm()
 " FZF-VIM settings
 nmap <leader>F :FZF<CR>
 nmap <leader>f :Rg<CR>
+nmap <leader>G :GFiles<CR>

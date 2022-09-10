@@ -19,7 +19,7 @@
     branch = auto
     ui = true
 [core]
-    editor = /usr/local/bin/nvim
+    editor = /opt/homebrew/bin/nvim
     excludesfile = /Users/brendon/.gitignore
 [mergetool]
     keepBackup = false

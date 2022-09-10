@@ -4,6 +4,7 @@ source ~/.vimrc
 call plug#begin('~/.local/share/nvim/plugged')
 Plug 'junegunn/rainbow_parentheses.vim'
 Plug 'junegunn/vim-easy-align'
+Plug 'mzlogin/vim-markdown-toc'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'tpope/vim-dispatch'
 Plug 'tpope/vim-surround'

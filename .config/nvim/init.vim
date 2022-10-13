@@ -2,6 +2,7 @@ source ~/.vimrc
 
 " Begin VimPlug
 call plug#begin('~/.local/share/nvim/plugged')
+Plug 'ggandor/leap.nvim'
 Plug 'junegunn/rainbow_parentheses.vim'
 Plug 'junegunn/vim-easy-align'
 Plug 'mzlogin/vim-markdown-toc'
@@ -24,6 +25,14 @@ Plug 'guns/vim-sexp', {'for': 'clojure'}
 Plug 'liquidz/vim-iced', {'for': 'clojure'}
 Plug 'liquidz/vim-iced-coc-source', {'for': 'clojure'}
 call plug#end()
+
+" Leap default keybindings
+lua << EOF
+require('leap').add_default_mappings()
+require('leap').setup {
+  highlight_unlabeled = true
+}
+EOF
 
 " Activation based on file type
 augroup rainbow_lisp

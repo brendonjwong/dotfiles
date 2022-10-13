@@ -18,6 +18,9 @@ Plug 'tpope/vim-rhubarb'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 
+" Terraform
+Plug 'hashivim/vim-terraform'
+
 " Clojure
 Plug 'guns/vim-sexp', {'for': 'clojure'}
 

@@ -1,8 +1,5 @@
-" Use Vim settings, rather than Vi settings (much better!).
 " This must be first, because it changes other options as a side effect.
 set nocompatible
-
-" allow backspacing over everything in insert mode set backspace=indent,eol,start
 
 set history=50 " keep 50 lines of command line history
 set ruler      " show the cursor position all the time
@@ -64,7 +61,6 @@ endif
 set tabstop=4
 set shiftwidth=4
 set expandtab " use spaces for tabs
-set list      " show whitespace characters
 set nobackup
 set noundofile
 set number    " show line numbers on sidebar
@@ -90,40 +86,6 @@ vnoremap <tab> %
 
 " Clear search highlights
 nnoremap <leader><space> :noh<cr>
-
-" Open netrw
-nnoremap <leader>e :Explore<cr>
-
-" ---------- CLOJURE ----------
-
-function! Cljstyle()
-    let cwd = getcwd()
-    let winsave = winsaveview()
-    execute "cd" . expand('%:p:h')
-
-    :%!cljstyle pipe
-
-    execute "cd" . cwd
-    call winrestview(winsave)
-endfunction
-
-command! Cljstyle call Cljstyle()
-
-" Connects to nREPL using vim-iced, with a one- or two-arg form:
-" - (port)
-" - (host, port)
-function! CljConnect(...)
-    call iced#repl#execute('disconnect')
-    if a:0 == 1
-        let g:iced#nrepl#host = "127.0.0.1"
-        call iced#repl#connect('nrepl', a:1)
-    else
-        let g:iced#nrepl#host = a:1
-        call iced#repl#connect('nrepl', a:2)
-    endif
-endfunction
-
-command! -nargs=+ CljConnect call CljConnect(<f-args>)
 
 " ---------- PYTHON ----------
 

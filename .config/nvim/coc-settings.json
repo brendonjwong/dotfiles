@@ -1,5 +1,4 @@
 {
-    "coc.source.iced.enable": true,
     "diagnostic-languageserver.linters": {
         "clj_kondo_lint": {
             "command": "clj-kondo",
@@ -19,10 +18,10 @@
                 }
             ],
             "securities": {
-                "error": "error",
-                "warning": "warning",
-                "note": "info"
-            }
+                    "error": "error",
+                    "warning": "warning",
+                    "note": "info"
+            } 
 
         }
     },

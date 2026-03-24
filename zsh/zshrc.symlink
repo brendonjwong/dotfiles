@@ -15,6 +15,9 @@ ZSH_THEME=""
 # Use case-sensitive completion.
 CASE_SENSITIVE="true"
 
+# Stop ZSH from automatically adding backslashes to pasted URLs
+DISABLE_MAGIC_FUNCTIONS="true"
+
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 plugins=(
   git
@@ -67,27 +70,15 @@ fi
 # Initialize FZF
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-# Initialize pyenv
-if command -v pyenv 1>/dev/null 2>&1; then
-    eval "$(pyenv init --path)"
-    eval "$(pyenv init -)"
-    eval "$(pyenv virtualenv-init -)"
-fi
-
-# Put vim-iced on the PATH
-export PATH=$PATH:/Users/$USER/.local/share/nvim/plugged/vim-iced/bin
+# Put local bin on the PATH
+export PATH="/Users/brendon/.local/bin:$PATH"
 
 autoload -U +X bashcompinit && bashcompinit
 autoload -U compinit && compinit
 complete -o nospace -C /usr/local/bin/terraform terraform
 
 # Put the correct version of java on the PATH
-switch-java() {
-    export JAVA_HOME=$(/usr/libexec/java_home -v $1)
-    export PATH=$JAVA_HOME/bin:$PATH
-    java -version
-}
-switch-java 1.8 2> /dev/null
+export JAVA_HOME=$(/usr/libexec/java_home -v 17)
 
 # Turn off asyncpreempt flag for the golang debugger to prevent performance
 # issues (https://yaleman.org/post/2021/2021-01-01-apple-m1-terraform-and-golang/)

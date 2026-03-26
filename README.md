@@ -39,9 +39,9 @@ Run this:
 
 ```sh
 # Download the dotfiles repo
-curl -LOk https://github.com/brendonjwong/dotfiles/archive/master.zip
-unzip master.zip
-mv dotfiles-master dotfiles
+curl -LOk https://github.com/brendonjwong/dotfiles/archive/main.zip
+unzip main.zip
+mv dotfiles-main dotfiles
 cd dotfiles
 
 # Run the installation
@@ -51,8 +51,8 @@ script/bootstrap
 git init
 git remote add origin git@github.com:brendonjwong/dotfiles.git
 git clean -fd
-git pull origin master
-git branch --set-upstream-to=origin/master master
+git pull origin main
+git branch --set-upstream-to=origin/main main
 ```
 
 This will symlink the appropriate files in `dotfiles` to your home directory.

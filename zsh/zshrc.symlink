@@ -31,8 +31,8 @@ source $ZSH/oh-my-zsh.sh
 # ------------------------------------------------------------------------------
 
 # Fix help
-unalias run-help
-autoload run-help
+# unalias run-help
+# autoload run-help
 
 # SSH
 export SSH_KEY_PATH="~/.ssh/rsa_id"

@@ -182,6 +182,16 @@ vim.g["conjure#client#clojure#nrepl#mapping#run_alternate_ns_tests"] = false
 vim.g["conjure#client#clojure#nrepl#mapping#run_current_ns_tests"] = false
 vim.g["conjure#client#clojure#nrepl#mapping#run_current_test"] = false
 
+-- ========== LSP ==========
+
+vim.lsp.config("clojure_lsp", {
+  cmd = { "clojure-lsp" },
+  filetypes = { "clojure" },
+  root_markers = { "project.clj", "deps.edn", "build.boot", "shadow-cljs.edn", ".git" },
+})
+
+-- vim.lsp.enable("clojure_lsp")
+
 -- ========== TREESITTER ==========
 
 vim.opt.runtimepath:append(vim.fn.stdpath("data") .. "/site")

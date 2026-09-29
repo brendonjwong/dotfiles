@@ -13,6 +13,7 @@
     rb = rebase
     pu = pull -p
     wdid = log --author "brendonjwong" --all --since "yesterday"
+    wt = worktree
 [color]
     diff = auto
     status = auto
@@ -21,6 +22,8 @@
 [core]
     editor = /opt/homebrew/bin/nvim
     excludesfile = /Users/brendon/.gitignore
+# [merge]
+#     conflictstyle = diff3
 [mergetool]
     keepBackup = false
 [diff]
@@ -28,4 +31,14 @@
 [pull]
     rebase = true
 [push]
-    default = simple
+    default = current
+[rebase]
+    autostash = true
+[init]
+    defaultBranch = main
+[credential "https://github.com"]
+	helper = 
+	helper = !/opt/homebrew/bin/gh auth git-credential
+[credential "https://gist.github.com"]
+	helper = 
+	helper = !/opt/homebrew/bin/gh auth git-credential

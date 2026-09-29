@@ -17,6 +17,7 @@ alias dc='docker compose'
 # Changing directories
 alias cdd='cd ~/Downloads/'
 alias cdr='cd ~/repos/'
+alias cdtop='cd $(git rev-parse --show-toplevel)'
 alias u='cd ..'
 alias uu='cd ../..'
 alias uuu='cd ../../..'
@@ -30,3 +31,6 @@ alias tfp='terraform plan'
 alias tfa='terraform apply'
 alias tfm='terraform fmt'
 alias tfws='terraform workspace'
+
+# Leiningen
+alias lrr='lein refresh repl'

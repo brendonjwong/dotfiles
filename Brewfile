@@ -1,6 +1,7 @@
 cask_args appdir: '/Applications'
 
 tap 'borkdude/brew'
+tap 'hashicorp/tap'
 
 brew 'bash-completion'
 brew 'bat'
@@ -33,9 +34,11 @@ brew 'xsv'
 brew 'zsh'
 
 cask 'cljstyle'
+cask 'docker'
 cask 'firefox'
 cask 'flycut'
 cask 'font-source-code-pro'
+cask 'ghostty'
 cask 'google-chrome'
 cask 'kap'
 cask 'rectangle'

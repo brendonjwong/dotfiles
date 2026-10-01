@@ -68,7 +68,7 @@ if [ -f ~/.zshrc-aliases ]; then
 fi
 
 # Initialize FZF
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+source <(fzf --zsh)
 
 # Put local bin on the PATH
 export PATH="/Users/brendon/.local/bin:$PATH"
